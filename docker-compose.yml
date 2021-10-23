@@ -1,0 +1,29 @@
+version: "3"
+services:
+  front:
+    container_name: frontapp
+    build:
+      context: ./front
+    ports:
+      - '3000:3000'
+      - '24678:24678' 
+    volumes:
+      - ./front:/front
+    tty: true
+    stdin_open: true
+    environment:
+      - CHOKIDAR_USEPOLLING=true
+    env_file: ./front/.env
+
+  server:
+    container_name: serverapp
+    build:
+      context: ./server
+    tty: true
+    volumes:
+      - ./server:/server
+    working_dir: /server
+    expose:
+      - 5000
+    ports:
+      - '5000:5000'
