@@ -13,7 +13,6 @@ services:
     stdin_open: true
     environment:
       - CHOKIDAR_USEPOLLING=true
-    env_file: ./front/.env
 
   server:
     container_name: serverapp
