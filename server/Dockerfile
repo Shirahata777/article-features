@@ -26,4 +26,4 @@ RUN pip install -r requirements.txt
 
 ENV HOST 0.0.0.0
 
-# CMD ["uwsgi", "--ini", "uwsgi.ini"]
+CMD ["uwsgi", "--ini", "uwsgi.ini"]
