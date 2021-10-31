@@ -22,7 +22,5 @@ services:
     volumes:
       - ./server:/server
     working_dir: /server
-    expose:
-      - 5000
     ports:
       - '5000:5000'

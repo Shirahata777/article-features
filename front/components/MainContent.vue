@@ -58,7 +58,7 @@ export default defineComponent({
     const getCorpus = async () => {
       console.log(process.env);
       state.result = await axios
-        .get(`http://localhost:5000/lda?text=${state.text}`)
+        .get(`http://server/lda?text=${state.text}`)
         .then((res) => {
           
           return res.data;
