@@ -14,16 +14,28 @@ services:
   #   environment:
   #     - CHOKIDAR_USEPOLLING=true
 
-  server:
-    container_name: serverapp
+  # server:
+  #   container_name: serverapp
+  #   build:
+  #     context: ./server
+  #   tty: true
+  #   ports:
+  #     - '5000:5000'
+  #   volumes:
+  #     - ./server:/server
+  #   working_dir: /server
+
+  server-java:
+    container_name: server-java
     build:
-      context: ./server
+      context: ./server-java
     tty: true
     ports:
       - '5000:5000'
     volumes:
-      - ./server:/server
-    working_dir: /server
+      - ./server-java:/server-java
+    working_dir: /server-java
+
 
   front-vue:
     container_name: frontvue
