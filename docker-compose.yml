@@ -20,7 +20,7 @@ services:
       context: ./server
     tty: true
     ports:
-      - '9000:5000'
+      - '5000:5000'
     volumes:
       - ./server:/server
     working_dir: /server
